@@ -1,14 +1,23 @@
 {
   "name": "ytvideo-summarizer",
   "version": "1.0.0",
-  "description": "",
+  "description": "A youtube video summarizer that uses the OpenAI API to summarize the youtube video's transcript that has captions.",
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "youtube video summarizer",
+    "youtube video captions extract",
+    "nodejs",
+    "express",
+    "openai",
+    "youtube-transcript",
+    "cors"
+  ],
+  "author": "iamsidar07",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
