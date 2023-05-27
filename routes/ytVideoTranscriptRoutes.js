@@ -26,8 +26,12 @@ const getVideoTranscript = async (videoId, type) => {
 
 router.route('/').post(async (req, res) => {
     const { videoId, type } = req.body;
-    const transcriptData = await getVideoTranscript(videoId, type);
-    res.status(200).json({ data: transcriptData });
+    try {
+        const transcriptData = await getVideoTranscript(videoId, type);
+        res.status(200).json({ data: transcriptData });
+    } catch (error) {
+        res.status(500).json({ error: error?.message || 'Something went wrong' });
+    }
 });
 
 export default router;

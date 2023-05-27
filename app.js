@@ -1,7 +1,7 @@
 import express from "express";
 import Cors from "cors";
 import ytVideoTranscript from "./routes/ytVideoTranscriptRoutes.js";
-import ytVideoSummariz from './routes/summarizeRoutes.js'
+import ytVideoSummariz from "./routes/summarizeRoutes.js";
 
 const app = express();
 
