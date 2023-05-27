@@ -1,7 +1,7 @@
 import express from "express";
 import Cors from "cors";
 import ytVideoTranscript from "./routes/ytVideoTranscriptRoutes.js";
-import ytVideoSummariz from './routes/summarizeRoutes.js'
+import ytVideoSummariz from "./routes/summarizeRoutes.js";
 
 const app = express();
 
@@ -16,9 +16,9 @@ app.use("/api/v1/summariz", ytVideoSummariz);
 const startServer = () => {
     try {
         app.get("/", async (req, res) => {
-            res.send("Hello world from YtVideoTranscript")
+            res.send("Hello world from YtVideoTranscript");
         })
-        app.listen(port, () => console.log(`Server is running on port ${port}`))
+        app.listen(port, () => console.log(`Server is running on port ${port}`));
     } catch (error) {
         console.error(error)
     }

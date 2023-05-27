@@ -1,5 +1,5 @@
 import express from 'express';
-import { YoutubeTranscript } from "youtube-transcript";
+import { YoutubeTranscript } from 'youtube-transcript';
 
 const router = express.Router();
 
@@ -10,7 +10,7 @@ router.route('/').get((req, res) => {
 // getting youtube video transcript from videoId
 const getVideoTranscript = async (videoId, type) => {
     const transcript = await YoutubeTranscript.fetchTranscript(videoId);
-    let transcriptStr = "";
+    let transcriptStr = '';
     for (let index = 0; index < transcript.length; index++) {
         transcriptStr += `${transcript[index].text}. `;
     }
@@ -26,8 +26,12 @@ const getVideoTranscript = async (videoId, type) => {
 
 router.route('/').post(async (req, res) => {
     const { videoId, type } = req.body;
-    const transcriptData = await getVideoTranscript(videoId, type);
-    res.status(200).json({ data: transcriptData });
+    try {
+        const transcriptData = await getVideoTranscript(videoId, type);
+        res.status(200).json({ data: transcriptData });
+    } catch (error) {
+        res.status(500).json({ error: error?.message || 'Something went wrong' });
+    }
 });
 
 export default router;
