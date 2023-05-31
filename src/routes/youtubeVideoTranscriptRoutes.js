@@ -1,6 +1,6 @@
 import express from 'express';
 import { YoutubeTranscript } from 'youtube-transcript';
-import { extractTextFromTranscript, validateAndExtractVideoId } from "./youtubeVideoSummaryRoutes.js";
+import { extractTextFromTranscript, validateAndExtractVideoId } from "../utils/index.js";
 
 const router = express.Router();
 
